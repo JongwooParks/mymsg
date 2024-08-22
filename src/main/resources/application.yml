@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: local
+
+server:
+  port: 8080
+  servlet:
+    context-path: /dawn
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+    import:
+        - classpath:/config/local/local-config.yml
+        - classpath:/config/local/local-datasource.yml
+
