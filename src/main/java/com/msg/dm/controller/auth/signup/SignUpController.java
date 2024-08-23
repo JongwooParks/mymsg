@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class SignUpController {
     private final SignService signService;
 
-
     @PostMapping("/validUserId")
     public ResponseEntity<?> existUser(@RequestBody StUserDTO user){
         log.info(user.getUserId());

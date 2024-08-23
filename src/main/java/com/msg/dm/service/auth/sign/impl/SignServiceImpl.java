@@ -20,7 +20,7 @@ public class SignServiceImpl implements SignService {
 
     @Override
     public boolean existUser(String userId) {
-        return !userRepo.findByUserId(userId).isEmpty();
+        return !userRepo.findAllByUserId(userId).isEmpty();
     }
 
     @Override
