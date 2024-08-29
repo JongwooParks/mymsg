@@ -17,6 +17,7 @@ public class StMessageDTO {
     private String sender;
     private String content;
     private LocalDateTime dateTime;
+    private Long roomId;
 
     public StMessage toEntity(){
         ObjectMapper objectMapper = new ObjectMapper();

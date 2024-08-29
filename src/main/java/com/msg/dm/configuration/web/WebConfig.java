@@ -10,6 +10,7 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/chat/**")
                 .allowedOrigins("http://localhost") // Vue 앱의 주소
+                .allowedHeaders("Authorization", "Content-Type")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowCredentials(true);
     }

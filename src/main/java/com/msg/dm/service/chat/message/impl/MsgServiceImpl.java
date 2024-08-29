@@ -25,8 +25,9 @@ public class MsgServiceImpl implements MsgService {
     }
 
     @Override
-    public List<StMessageDTO> getRecentMessages() {
-        List<StMessageDTO> list = new java.util.ArrayList<>(repository.findTop10ByOrderByDateTimeDesc().stream().map(StMessage::toDTO).toList());
+    public List<StMessageDTO> getRecentMessages(Long roomId) {
+
+        List<StMessageDTO> list = dslRepository.getRecentMessages(roomId);
         Collections.reverse(list);
         return list;
     }

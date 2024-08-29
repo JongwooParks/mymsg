@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface MsgRepository extends JpaRepository<StMessage,Long> {
 
-    public List<StMessage> findTop10ByOrderByDateTimeDesc();
+    public List<StMessage> findTop7ByOrderByDateTimeDesc();
 }

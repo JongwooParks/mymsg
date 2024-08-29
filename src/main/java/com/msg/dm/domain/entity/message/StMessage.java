@@ -25,6 +25,8 @@ public class StMessage {
     private String content;
     private LocalDateTime dateTime;
 
+    private Long roomId;
+
     public StMessageDTO toDTO(){
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());

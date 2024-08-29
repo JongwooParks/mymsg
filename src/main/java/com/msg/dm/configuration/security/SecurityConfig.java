@@ -84,14 +84,13 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(
             HttpSecurity http
     )throws Exception{
-        log.info("WebSecurityConfig Start!!");
         return http
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(req ->
                         req
                             .requestMatchers("/sign/**","/auth/**").permitAll()
-                            .requestMatchers("/chat/**").permitAll() // WebSocket 엔드포인트 허용
+                            .requestMatchers("/chat/**").permitAll()
                             .anyRequest().authenticated()
                 )
                 .sessionManagement(session ->

@@ -11,6 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
@@ -25,7 +26,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         try{
             String accessToken = resolveAccessToken(request);
-            authenticateUser(accessToken);
+            if(StringUtils.hasLength(accessToken)){
+                authenticateUser(accessToken);
+            }
         } catch (Exception exception) {
             log.error("JwtAuthentication Authentication Exception Occurs! - {}",exception.getClass());
         }

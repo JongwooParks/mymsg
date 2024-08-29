@@ -23,6 +23,8 @@ public class QStMessage extends EntityPathBase<StMessage> {
 
     public final DateTimePath<java.time.LocalDateTime> dateTime = createDateTime("dateTime", java.time.LocalDateTime.class);
 
+    public final NumberPath<Long> roomId = createNumber("roomId", Long.class);
+
     public final StringPath sender = createString("sender");
 
     public final NumberPath<Long> stId = createNumber("stId", Long.class);

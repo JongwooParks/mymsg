@@ -8,7 +8,7 @@ public interface MsgService {
 
     public StMessageDTO saveMsg(StMessageDTO message);
 
-    public List<StMessageDTO> getRecentMessages();
+    public List<StMessageDTO> getRecentMessages(Long roomId);
 
 
 }
