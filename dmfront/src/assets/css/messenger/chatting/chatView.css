@@ -1,0 +1,33 @@
+#message_container{
+    height: 700px;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2px 5px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.content{
+    padding: 10px;
+    text-align: left;
+}
+
+.message{
+    width: 500px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.mine {
+    float: right;
+    clear: both;
+    background-color: skyblue;
+}
+
+.guest{
+    float: left;
+    clear: both;
+    background-color: lightgoldenrodyellow;
+}
